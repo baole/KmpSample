@@ -1,7 +1,7 @@
 ## The project
 
 The Kotlin Multiplatform (KMP) project was created with Android Studio, Kotlin Multiplatform App template. It's then added iOS 
-native dependencies to iOS target.
+native dependencies to iOS target (see [build.gradle.kts](https://github.com/baole/KmpSample/blob/master/shared/build.gradle.kts#L23)).
 
 ```kotlin
     pod("AFNetworking") {
