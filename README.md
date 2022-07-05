@@ -17,7 +17,7 @@ native dependencies to iOS target.
 
 ## What happens?
 - AFNetworking classes are recognized by Android Studio/Kotlin (see [Platform.kt](https://github.com/baole/KmpSample/blob/master/shared/src/iosMain/kotlin/com/github/kmp/sample/Platform.kt#L4))
-- Agora classes aren't recognized by Android Studio, Gradle throws an error while building the project instead (see [the issue](https://github.com/baole/KmpSample#the-issue).
+- Agora classes aren't recognized by Android Studio, Gradle throws an error while building the project instead (see [the issue](https://github.com/baole/KmpSample#the-issue)).
 
 ## What we expect?
 Agora classes are recognized by Android Studio/Kotlin. 
