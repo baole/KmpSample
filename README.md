@@ -14,12 +14,11 @@ native dependencies to iOS target
 ```
 
 ## What happens?
-AFNetworking classes are recognized by Android Studio/Kotlin
-Agora classes aren't recognized by Android Studio
+- AFNetworking classes are recognized by Android Studio/Kotlin (see [Platform.kt](https://github.com/baole/KmpSample/blob/master/shared/src/iosMain/kotlin/com/github/kmp/sample/Platform.kt#L4))
+- Agora classes aren't recognized by Android Studio, Gradle throws an error while building the project instead (see [the issue](https://github.com/baole/KmpSample#the-issue).
 
 ## What we expect?
-Agora classes are recognized by Android Studio/Kotlin
-
+Agora classes are recognized by Android Studio/Kotlin. 
 
 ## The issue
 Gradle failed to build the project with an error 
@@ -34,8 +33,14 @@ Exception in thread "main" java.lang.Error: /var/folders/3j/8k6z66l50dq_d1sjfxl8
 
 See [full log file](gradle_sync.log)
 
-This gradle error seems to be similar to [a known error](https://kotlinlang.org/docs/native-cocoapods.html#possible-issues-and-solutions),
+## Some other debug information:
+1. This gradle error seems to be similar to [a known error](https://kotlinlang.org/docs/native-cocoapods.html#possible-issues-and-solutions),
 but applying the workaround didn't work.
 
+2. After importing the project into Android Studio, if you look at the folder `shared/build/cocoapods/synthetic/IOS/Pods`, 
+Gradle generates header files (in C language style) for `AFNetworking`. It successfully downloaded 
+but didn't manage to generate header files for `AgoraRtcEngine_iOS` iOS SDK.
+
+KMP uses header files to create a "bridge" to iOS native code.
 
 
