@@ -1,7 +1,7 @@
 ## The project
 
-The project was created with Android Studio, Kotlin Multiplatform App template. It's then add iOS 
-native dependencies to iOS target
+The Kotlin Multiplatform (KMP) project was created with Android Studio, Kotlin Multiplatform App template. It's then added iOS 
+native dependencies to iOS target.
 
 ```kotlin
     pod("AFNetworking") {
@@ -12,6 +12,8 @@ native dependencies to iOS target
 
     }
 ```
+
+`AFNetworking` is used to demonstrate how KMP manages iOS/Cocoapods dependencies for iOS target
 
 ## What happens?
 - AFNetworking classes are recognized by Android Studio/Kotlin (see [Platform.kt](https://github.com/baole/KmpSample/blob/master/shared/src/iosMain/kotlin/com/github/kmp/sample/Platform.kt#L4))
